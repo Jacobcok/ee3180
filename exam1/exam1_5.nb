@@ -1,0 +1,69 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1565,         59]
+NotebookOptionsPosition[      1131,         41]
+NotebookOutlinePosition[      1475,         56]
+CellTagsIndexPosition[      1432,         53]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"EX", "=", 
+   RowBox[{"-", "5.7"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"varX", "=", "38.7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"EXsq", "=", 
+  RowBox[{"varX", "+", 
+   RowBox[{"EX", "^", "2"}]}]}]}], "Input",
+ CellChangeTimes->{{3.717336870646262*^9, 
+  3.7173368999796333`*^9}},ExpressionUUID->"76f07ecb-a77b-4037-8df8-\
+886b7126e688"],
+
+Cell[BoxData["71.19`"], "Output",
+ CellChangeTimes->{
+  3.717336900729581*^9},ExpressionUUID->"6254e1c8-6c5a-47ca-a834-\
+1372fee5bc28"]
+}, Open  ]]
+},
+WindowSize->{578, 833},
+WindowMargins->{{Automatic, 389}, {-8, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 397, 11, 69, "Input", "ExpressionUUID" -> \
+"76f07ecb-a77b-4037-8df8-886b7126e688"],
+Cell[980, 35, 135, 3, 63, "Output", "ExpressionUUID" -> \
+"6254e1c8-6c5a-47ca-a834-1372fee5bc28"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
