@@ -1,0 +1,340 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10525,        332]
+NotebookOptionsPosition[      9874,        305]
+NotebookOutlinePosition[     10216,        320]
+CellTagsIndexPosition[     10173,        317]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["Question 1\n",
+  FontVariations->{"Underline"->True}],
+ "Suppose X is a Guassian random variable with a mean equal to 3.7 and a \
+standard deviation equal to 8.6. Another random variable Y is equal to\n\nY = \
+X^2 + 2\n\nDetermine covariance for X and Y"
+}], "Text",
+ CellChangeTimes->{{3.7215636524244986`*^9, 3.7215636974644613`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"EX", "=", "3.7"}], " ", ";", " ", 
+  RowBox[{"sigmaX", "=", "8.6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Y", "=", 
+   RowBox[{
+    RowBox[{"x", "^", "2"}], "+", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fX", "=", 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"NormalDistribution", "[", 
+       RowBox[{"EX", ",", "sigmaX"}], "]"}], ",", "x"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"muX", " ", "should", " ", "equal", " ", "EX"}], "..."}], " ", 
+    "sanity", " ", "check"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"muX", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "*", "fX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EY", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Y", "*", "fX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "Infinity"}], ",", " ", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"EXsq", "=", 
+    RowBox[{
+     RowBox[{"sigmaX", "^", "2"}], "+", 
+     RowBox[{"EX", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"muY", " ", "should", " ", "equal", " ", "EY"}], "..."}], " ", 
+    "sanity", " ", "check"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"muY", "=", 
+   RowBox[{"EXsq", "+", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"EXY", "=", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"x", "*", "Y", "*", "fX"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], ";"}],
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"find", " ", "covXY"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"covXY", "=", 
+  RowBox[{"EXY", "-", 
+   RowBox[{"EY", "*", "EX"}]}]}]}], "Input",
+ CellChangeTimes->{{3.721562984622953*^9, 3.721563116132395*^9}, {
+  3.721563449042218*^9, 3.7215635555051737`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"547.3040000000005`", "\[VeryThinSpace]", "-", 
+  RowBox[{"9.574515108989012`*^-14", " ", "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{{3.721563449828863*^9, 3.7215634783280478`*^9}, {
+   3.7215635114661894`*^9, 3.72156355740638*^9}, 3.721563702816041*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 2",
+  FontVariations->{"Underline"->True}],
+ "\nSuppose that X is a binomial random variable with 71 trials and a success \
+prob of 0.68. Conditional on X another random var Y has a Poisson random \
+variable with a mean equal to X^3. Determine the correlation coefficient for \
+X and Y."
+}], "Text",
+ CellChangeTimes->{{3.721563123996065*^9, 3.7215631711158323`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", 
+    RowBox[{"pX", ",", "pY", ",", "n", ",", "k"}], "]"}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Gaussian", " ", "Dist"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pX", "=", 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"BinomialDistribution", "[", 
+       RowBox[{"71", ",", "0.68"}], "]"}], ",", "n"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Poisson", " ", "Dist"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pYgX", "=", 
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"PoissonDistribution", "[", 
+      RowBox[{"n", "^", "3"}], "]"}], ",", "k"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EX", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"n", "*", "pX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "71"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXsq", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"n", "^", "2"}], "*", "pX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "71"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EYgX", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"k", "*", "pYgX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EY", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"EYgX", "*", "pX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "71"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EYsqgX", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"k", "^", "2"}], "*", "pYgX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EYsq", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"EYsqgX", "*", "pX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "71"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXYgX", "=", 
+   RowBox[{"n", "*", "EYgX"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXY", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"EXYgX", "*", "pX"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "71"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"varY", "=", 
+   RowBox[{"EYsq", "-", 
+    RowBox[{"EY", "*", "EY"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"varX", "=", 
+   RowBox[{"EXsq", "-", 
+    RowBox[{"EX", "*", "EX"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"covXY", "=", 
+    RowBox[{"EXY", "-", 
+     RowBox[{"EX", "*", "EY"}]}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "correlation", " ", "coefficient", "  ", "for", " ", "X", " ", "and", " ", 
+    "Y"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"rhoXY", "=", 
+  RowBox[{"covXY", "/", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"varX", "*", "varY"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.721563186454157*^9, 3.7215634430506897`*^9}, {
+  3.72156356405711*^9, 3.7215635775857573`*^9}, {3.7215636155050073`*^9, 
+  3.7215636291938534`*^9}}],
+
+Cell[BoxData["0.9935244926013389`"], "Output",
+ CellChangeTimes->{{3.721563408922035*^9, 3.7215634439259667`*^9}, 
+   3.7215637050242414`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 3",
+  FontVariations->{"Underline"->True}],
+ "\nSuppose that X is a discrete random variable that takes one of the values \
+1,2,3. The prob that X is euqal to 1 is 0.5, and the prob that X is equal to \
+2 is 0.2. Conditional on X, an continuous random variable Y has the following \
+distributions:\n\nf(y | X=1) is uniform over the interval from -5 to 5\nf(y | \
+X=2) is Gaussian with mean 3 and standard deviation 6\nf(y | X=3) is \
+exponential with mean equal to 10\n\nDetermine the prob that X was equal to 3 \
+conditional on observing that Y= 4.5."
+}], "Text",
+ CellChangeTimes->{{3.7215637238561497`*^9, 3.7215638413520937`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "x", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", "=", "0.5"}], ";", 
+  RowBox[{"p2", "=", "0.2"}], ";", 
+  RowBox[{"p3", "=", 
+   RowBox[{"1", "-", "p1", "-", "p2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fyg1", "=", 
+    RowBox[{"1", "/", "10"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"guassian", " ", "dist"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fyg2", "=", 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"NormalDistribution", "[", 
+       RowBox[{"3", ",", "6"}], "]"}], ",", "y"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"exponential", " ", "dist"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fyg3", "=", 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"ExponentialDistribution", "[", 
+       RowBox[{"1", "/", "10"}], "]"}], ",", "y"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fY", "=", 
+   RowBox[{
+    RowBox[{"fyg1", "*", "p1"}], "+", 
+    RowBox[{"fyg2", "*", "p2"}], "+", 
+    RowBox[{"fyg3", "*", "p3"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p3gY", "=", 
+   RowBox[{"fyg3", "*", 
+    RowBox[{"p3", "/", "fY"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"p3gY", "/.", 
+  RowBox[{"{", 
+   RowBox[{"y", "\[Rule]", "4.5"}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.721563851188151*^9, 3.721563944999032*^9}, {
+  3.721564311332938*^9, 3.7215643683162727`*^9}}],
+
+Cell[BoxData["0.23322801634690332`"], "Output",
+ CellChangeTimes->{
+  3.7215639476366663`*^9, {3.721564328633132*^9, 3.721564331364312*^9}}]
+}, Open  ]]
+},
+WindowSize->{770, 988},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 363, 7, 144, "Text"],
+Cell[CellGroupData[{
+Cell[946, 31, 2249, 69, 252, "Input"],
+Cell[3198, 102, 285, 4, 33, "Output"]
+}, Open  ]],
+Cell[3498, 109, 403, 8, 87, "Text"],
+Cell[CellGroupData[{
+Cell[3926, 121, 3355, 109, 372, "Input"],
+Cell[7284, 232, 142, 2, 31, "Output"]
+}, Open  ]],
+Cell[7441, 237, 670, 11, 201, "Text"],
+Cell[CellGroupData[{
+Cell[8136, 252, 1579, 46, 232, "Input"],
+Cell[9718, 300, 140, 2, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
