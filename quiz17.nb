@@ -10,18 +10,34 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8114,        247]
-NotebookOptionsPosition[      7246,        219]
-NotebookOutlinePosition[      7588,        234]
-CellTagsIndexPosition[      7545,        231]
+NotebookDataLength[     10006,        278]
+NotebookOptionsPosition[      9129,        250]
+NotebookOutlinePosition[      9471,        265]
+CellTagsIndexPosition[      9428,        262]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[TextData[StyleBox["Question 1",
- FontVariations->{"Underline"->True}]], "Text",
- CellChangeTimes->{{3.71995645622898*^9, 
-  3.71995645779635*^9}},ExpressionUUID->"531fca31-f8b4-4219-b621-\
+Cell[TextData[{
+ StyleBox["Question 1\n",
+  FontVariations->{"Underline"->True}],
+ "Suppose that 48.4 percent of the cars manufactured by a particular \
+automobile manufacturer are \[OpenCurlyDoubleQuote]lemons\
+\[CloseCurlyDoubleQuote], which means that they were manufactured with some \
+sort of flaw. The lifetime in years T for one of their cars that IS a \
+\[OpenCurlyDoubleQuote]lemon\[CloseCurlyDoubleQuote] is a random variable \
+with the following probability density:\n\n\
+fTgLemon=t/sigma^2Exp[(-t^2)/(2*sigma^2)]\n\nwhere sigma = 12.5. The lifetime \
+in years T for one of their cars that IS NOT a \[OpenCurlyDoubleQuote]lemon\
+\[CloseCurlyDoubleQuote] is an exponential random variable with a mean equal \
+to 14.6. Suppose you buy one of their cars and the car\[CloseCurlyQuote]s \
+lifetime turns out to be 13 years. Based on that, what is the probability \
+that the car was a lemon?\n\nRound your answer to 3 digits to the right of \
+the decimal.\n"
+}], "Text",
+ CellChangeTimes->{{3.71995645622898*^9, 3.71995645779635*^9}, {
+  3.7215699134997077`*^9, 
+  3.721569995074051*^9}},ExpressionUUID->"531fca31-f8b4-4219-b621-\
 7f05e77bec86"],
 
 Cell[CellGroupData[{
@@ -92,10 +108,25 @@ Cell[BoxData["0.6177721250419973`"], "Output",
 e471041bd43f"]
 }, Open  ]],
 
-Cell[TextData[StyleBox["Question 2",
- FontVariations->{"Underline"->True}]], "Text",
- CellChangeTimes->{{3.719959878312581*^9, 
-  3.719959881548525*^9}},ExpressionUUID->"2b4c61ff-9c1e-43b7-9dff-\
+Cell[TextData[{
+ StyleBox["Question 2\n",
+  FontVariations->{"Underline"->True}],
+ "Suppose that a communication source transmits a symbol from an alphabet \
+that contains 4 possible symbols. The frequency with which the source \
+transmits the symbols is associated with the following probabilities\n\n\
+Pr[kth symbol] = k/10  k = 1, 2, 3, 4\n\nFor each of the transmitted symbols, \
+the signal S that is detected by the receiver is a continuous random variable \
+with the following conditional probability density function:\n\nfS(s | kth \
+symbol was transmitted) =  1/Sqrt[2*Pi*sigma^2]*Exp[-1/2((s-k)/sigma)^2]; \
+\[Minus]\[Infinity]<s<\[Infinity],\n\nwhere sigma = 0.47. ",
+ StyleBox["Determine the probability that the first symbol (k = 1) was \
+transmitted given that the received signal is S = 1.12.",
+  FontVariations->{"Underline"->True}],
+ "\n\nRound your answer to 3 digits to the right of the decimal."
+}], "Text",
+ CellChangeTimes->{{3.719959878312581*^9, 3.719959881548525*^9}, {
+  3.721570004817439*^9, 3.7215701202893305`*^9}, {3.721570166689453*^9, 
+  3.7215701676169133`*^9}},ExpressionUUID->"2b4c61ff-9c1e-43b7-9dff-\
 dc0ae27899f5"],
 
 Cell[CellGroupData[{
@@ -217,7 +248,7 @@ Cell[BoxData["0.7357876576860185`"], "Output",
 453e1bc97d52"]
 }, Open  ]]
 },
-WindowSize->{583, 988},
+WindowSize->{669, 988},
 WindowMargins->{{Automatic, -7}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
@@ -233,20 +264,20 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 208, 4, 30, "Text", "ExpressionUUID" -> \
+Cell[558, 20, 1150, 20, 296, "Text", "ExpressionUUID" -> \
 "531fca31-f8b4-4219-b621-7f05e77bec86"],
 Cell[CellGroupData[{
-Cell[791, 28, 2212, 57, 221, "Input", "ExpressionUUID" -> \
+Cell[1733, 44, 2212, 57, 202, "Input", "ExpressionUUID" -> \
 "6c2b5fc6-8627-4730-addd-b6faf0599f08"],
-Cell[3006, 87, 227, 4, 30, "Output", "ExpressionUUID" -> \
+Cell[3948, 103, 227, 4, 30, "Output", "ExpressionUUID" -> \
 "df2cc0ad-7877-47ca-92a7-e471041bd43f"]
 }, Open  ]],
-Cell[3248, 94, 210, 4, 30, "Text", "ExpressionUUID" -> \
+Cell[4190, 110, 1151, 19, 334, "Text", "ExpressionUUID" -> \
 "2b4c61ff-9c1e-43b7-9dff-dc0ae27899f5"],
 Cell[CellGroupData[{
-Cell[3483, 102, 3497, 108, 297, "Input", "ExpressionUUID" -> \
+Cell[5366, 133, 3497, 108, 297, "Input", "ExpressionUUID" -> \
 "0331ddf8-4f7b-490c-9d6d-55fdde8ffaaa"],
-Cell[6983, 212, 247, 4, 30, "Output", "ExpressionUUID" -> \
+Cell[8866, 243, 247, 4, 30, "Output", "ExpressionUUID" -> \
 "8f969fa3-3f78-4237-a931-453e1bc97d52"]
 }, Open  ]]
 }

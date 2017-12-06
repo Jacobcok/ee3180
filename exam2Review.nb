@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10525,        332]
-NotebookOptionsPosition[      9874,        305]
-NotebookOutlinePosition[     10216,        320]
-CellTagsIndexPosition[     10173,        317]
+NotebookDataLength[     12137,        370]
+NotebookOptionsPosition[     10922,        334]
+NotebookOutlinePosition[     11266,        349]
+CellTagsIndexPosition[     11223,        346]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,7 +25,9 @@ Cell[TextData[{
 standard deviation equal to 8.6. Another random variable Y is equal to\n\nY = \
 X^2 + 2\n\nDetermine covariance for X and Y"
 }], "Text",
- CellChangeTimes->{{3.7215636524244986`*^9, 3.7215636974644613`*^9}}],
+ CellChangeTimes->{{3.7215636524244986`*^9, 
+  3.7215636974644613`*^9}},ExpressionUUID->"b39df460-b9a7-4451-9a10-\
+7ee57dcf8c2b"],
 
 Cell[CellGroupData[{
 
@@ -98,13 +100,17 @@ Cell[BoxData[{
   RowBox[{"EXY", "-", 
    RowBox[{"EY", "*", "EX"}]}]}]}], "Input",
  CellChangeTimes->{{3.721562984622953*^9, 3.721563116132395*^9}, {
-  3.721563449042218*^9, 3.7215635555051737`*^9}}],
+  3.721563449042218*^9, 
+  3.7215635555051737`*^9}},ExpressionUUID->"d94811de-fb3a-4d4d-92db-\
+e004641f2d72"],
 
 Cell[BoxData[
  RowBox[{"547.3040000000005`", "\[VeryThinSpace]", "-", 
   RowBox[{"9.574515108989012`*^-14", " ", "\[ImaginaryI]"}]}]], "Output",
  CellChangeTimes->{{3.721563449828863*^9, 3.7215634783280478`*^9}, {
-   3.7215635114661894`*^9, 3.72156355740638*^9}, 3.721563702816041*^9}]
+   3.7215635114661894`*^9, 3.72156355740638*^9}, 
+   3.721563702816041*^9},ExpressionUUID->"40f454a4-f3c5-416c-aab1-\
+1fb07240e8e4"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -112,10 +118,13 @@ Cell[TextData[{
   FontVariations->{"Underline"->True}],
  "\nSuppose that X is a binomial random variable with 71 trials and a success \
 prob of 0.68. Conditional on X another random var Y has a Poisson random \
-variable with a mean equal to X^3. Determine the correlation coefficient for \
-X and Y."
+variable with a mean equal to X^3. \n\nDetermine the correlation coefficient \
+for X and Y."
 }], "Text",
- CellChangeTimes->{{3.721563123996065*^9, 3.7215631711158323`*^9}}],
+ CellChangeTimes->{{3.721563123996065*^9, 3.7215631711158323`*^9}, {
+  3.721572031853243*^9, 
+  3.72157203225323*^9}},ExpressionUUID->"4dbc7389-67d4-4eae-8375-\
+2eedcee07754"],
 
 Cell[CellGroupData[{
 
@@ -228,25 +237,29 @@ Cell[BoxData[{
     RowBox[{"varX", "*", "varY"}], "]"}]}]}]}], "Input",
  CellChangeTimes->{{3.721563186454157*^9, 3.7215634430506897`*^9}, {
   3.72156356405711*^9, 3.7215635775857573`*^9}, {3.7215636155050073`*^9, 
-  3.7215636291938534`*^9}}],
+  3.7215636291938534`*^9}},ExpressionUUID->"478c1f17-264e-49df-9142-\
+b7a804799229"],
 
 Cell[BoxData["0.9935244926013389`"], "Output",
  CellChangeTimes->{{3.721563408922035*^9, 3.7215634439259667`*^9}, 
-   3.7215637050242414`*^9}]
+   3.7215637050242414`*^9},ExpressionUUID->"e6ad4297-af72-48df-8ae2-\
+a3689c152bbf"]
 }, Open  ]],
 
 Cell[TextData[{
  StyleBox["Question 3",
   FontVariations->{"Underline"->True}],
  "\nSuppose that X is a discrete random variable that takes one of the values \
-1,2,3. The prob that X is euqal to 1 is 0.5, and the prob that X is equal to \
+1,2,3. The prob that X is equal to 1 is 0.5, and the prob that X is equal to \
 2 is 0.2. Conditional on X, an continuous random variable Y has the following \
 distributions:\n\nf(y | X=1) is uniform over the interval from -5 to 5\nf(y | \
 X=2) is Gaussian with mean 3 and standard deviation 6\nf(y | X=3) is \
 exponential with mean equal to 10\n\nDetermine the prob that X was equal to 3 \
 conditional on observing that Y= 4.5."
 }], "Text",
- CellChangeTimes->{{3.7215637238561497`*^9, 3.7215638413520937`*^9}}],
+ CellChangeTimes->{{3.7215637238561497`*^9, 3.7215638413520937`*^9}, 
+   3.7215708257371445`*^9},ExpressionUUID->"6acd2cfb-df9f-4dcd-944b-\
+b35b00b2df66"],
 
 Cell[CellGroupData[{
 
@@ -281,7 +294,18 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"ExponentialDistribution", "[", 
        RowBox[{"1", "/", "10"}], "]"}], ",", "y"}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"exponential", " ", "dist", " ", "formula"}], " ", "*)"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fX", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "y"}], "/", "10"}], "]"}], "/", "10"}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"fY", "=", 
    RowBox[{
@@ -296,16 +320,21 @@ Cell[BoxData[{
   RowBox[{"{", 
    RowBox[{"y", "\[Rule]", "4.5"}], "}"}]}]}], "Input",
  CellChangeTimes->{{3.721563851188151*^9, 3.721563944999032*^9}, {
-  3.721564311332938*^9, 3.7215643683162727`*^9}}],
+  3.721564311332938*^9, 3.7215643683162727`*^9}, {3.7215706988374095`*^9, 
+  3.721570767420969*^9}},ExpressionUUID->"c818df17-17d8-4e7f-b030-\
+1f81f9554195"],
 
 Cell[BoxData["0.23322801634690332`"], "Output",
  CellChangeTimes->{
-  3.7215639476366663`*^9, {3.721564328633132*^9, 3.721564331364312*^9}}]
+  3.7215639476366663`*^9, {3.721564328633132*^9, 3.721564331364312*^9}, {
+   3.7215707284088774`*^9, 3.7215707345285864`*^9}, 
+   3.7215707679452577`*^9},ExpressionUUID->"47173b22-1aed-49a4-a110-\
+dc11775c8e28"]
 }, Open  ]]
 },
 WindowSize->{770, 988},
-WindowMargins->{{Automatic, -7}, {Automatic, 0}},
-FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+WindowMargins->{{159, Automatic}, {Automatic, 55}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -319,20 +348,29 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 363, 7, 144, "Text"],
+Cell[558, 20, 423, 9, 144, "Text", "ExpressionUUID" -> \
+"b39df460-b9a7-4451-9a10-7ee57dcf8c2b"],
 Cell[CellGroupData[{
-Cell[946, 31, 2249, 69, 252, "Input"],
-Cell[3198, 102, 285, 4, 33, "Output"]
+Cell[1006, 33, 2309, 71, 240, "Input", "ExpressionUUID" -> \
+"d94811de-fb3a-4d4d-92db-e004641f2d72"],
+Cell[3318, 106, 346, 6, 30, "Output", "ExpressionUUID" -> \
+"40f454a4-f3c5-416c-aab1-1fb07240e8e4"]
 }, Open  ]],
-Cell[3498, 109, 403, 8, 87, "Text"],
+Cell[3679, 115, 515, 11, 106, "Text", "ExpressionUUID" -> \
+"4dbc7389-67d4-4eae-8375-2eedcee07754"],
 Cell[CellGroupData[{
-Cell[3926, 121, 3355, 109, 372, "Input"],
-Cell[7284, 232, 142, 2, 31, "Output"]
+Cell[4219, 130, 3412, 110, 354, "Input", "ExpressionUUID" -> \
+"478c1f17-264e-49df-9142-b7a804799229"],
+Cell[7634, 242, 199, 3, 30, "Output", "ExpressionUUID" -> \
+"e6ad4297-af72-48df-8ae2-a3689c152bbf"]
 }, Open  ]],
-Cell[7441, 237, 670, 11, 201, "Text"],
+Cell[7848, 248, 755, 13, 201, "Text", "ExpressionUUID" -> \
+"6acd2cfb-df9f-4dcd-944b-b35b00b2df66"],
 Cell[CellGroupData[{
-Cell[8136, 252, 1579, 46, 232, "Input"],
-Cell[9718, 300, 140, 2, 31, "Output"]
+Cell[8628, 265, 1996, 59, 240, "Input", "ExpressionUUID" -> \
+"c818df17-17d8-4e7f-b030-1f81f9554195"],
+Cell[10627, 326, 279, 5, 30, "Output", "ExpressionUUID" -> \
+"47173b22-1aed-49a4-a110-dc11775c8e28"]
 }, Open  ]]
 }
 ]
