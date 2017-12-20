@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     25833,        751]
-NotebookOptionsPosition[     21488,        645]
-NotebookOutlinePosition[     21830,        660]
-CellTagsIndexPosition[     21787,        657]
+NotebookDataLength[     62982,       1880]
+NotebookOptionsPosition[     54817,       1684]
+NotebookOutlinePosition[     55159,       1699]
+CellTagsIndexPosition[     55116,       1696]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,15 +36,15 @@ Cell["\<\
 Suppose that a discrete random variable X has the following probabiity mass \
 function:
 
-px(k) = c / a^k, k = 1,2,...,K
+pX(k) = c / a^k, k = 1,2,...,K
 
 where a = 2.11 and K = 56. Determine the value for the constant c.
 
 Round your answer to 2 digits to the right of the decimal.\
 \>", "Text",
  CellChangeTimes->{{3.7227707960353174`*^9, 3.722770809057685*^9}, {
-  3.7227708409215455`*^9, 
-  3.7227708539698315`*^9}},ExpressionUUID->"85157d5d-4407-4256-aa51-\
+  3.7227708409215455`*^9, 3.7227708539698315`*^9}, {3.722776858211631*^9, 
+  3.7227768589476156`*^9}},ExpressionUUID->"85157d5d-4407-4256-aa51-\
 72ec94932433"],
 
 Cell[CellGroupData[{
@@ -581,12 +581,20 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"pEg0", "=", ".015"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"pEg1", "=", ".079"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"pEg1", "=", ".079"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"total", " ", "P"}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"pE", "=", 
+  RowBox[{
+   RowBox[{"pE", "=", 
+    RowBox[{
+     RowBox[{"pEg0", "*", "p0"}], "+", 
+     RowBox[{"pEg1", "*", "p1"}]}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
    RowBox[{
-    RowBox[{"pEg0", "*", "p0"}], "+", 
-    RowBox[{"pEg1", "*", "p1"}]}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"bayes", "'"}], " ", "rule"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"p0gE", "=", " ", 
   RowBox[{"pEg0", "*", 
    RowBox[{"p0", "/", "pE"}]}]}]}], "Input",
@@ -594,7 +602,8 @@ Cell[BoxData[{
    3.7227763807613587`*^9, {3.722776467633847*^9, 3.7227764989459953`*^9}, {
    3.722776540162712*^9, 3.7227765404665327`*^9}, {3.722776579634975*^9, 
    3.7227766921078806`*^9}, {3.7227767460600896`*^9, 
-   3.7227767601406097`*^9}},ExpressionUUID->"52794987-72e1-498b-8e91-\
+   3.7227767601406097`*^9}, {3.7227768341155615`*^9, 
+   3.7227768424284763`*^9}},ExpressionUUID->"52794987-72e1-498b-8e91-\
 bd599ba6d1e7"],
 
 Cell[BoxData["0.1426331650105881`"], "Output",
@@ -604,47 +613,1077 @@ Cell[BoxData["0.1426331650105881`"], "Output",
 }, Open  ]],
 
 Cell[TextData[StyleBox["A question involving the CDF for a Gaussian random \
-variable.\n", "Subsubsection"]], "Text",
- CellChangeTimes->{{3.722770625465638*^9, 
-  3.722770627225307*^9}},ExpressionUUID->"842d0bb4-765b-4c80-9d12-\
+variable.", "Subsubsection"]], "Text",
+ CellChangeTimes->{{3.722770625465638*^9, 3.722770627225307*^9}, 
+   3.722777084603774*^9},ExpressionUUID->"842d0bb4-765b-4c80-9d12-\
 d1d07c83483f"],
 
-Cell[BoxData["asdf"], "Input",
- CellChangeTimes->{{3.722770627796831*^9, 
-  3.7227706278881593`*^9}},ExpressionUUID->"b1762f3c-af20-4493-8374-\
+Cell["\<\
+Suppose that X is a Gaussian random variable with a mean equal to 5.3 and a \
+variance equal to 19.0. What is the probability that X is less than or equal \
+to 3.7?\
+\>", "Text",
+ CellChangeTimes->{{3.7227770986992764`*^9, 
+  3.7227771203083177`*^9}},ExpressionUUID->"190fb818-3cab-46ce-8d65-\
+6e354ea2518b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mu", "=", "5.3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", "19.0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "=", "3.7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", 
+   RowBox[{"Sqrt", "[", "var", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"P", "=", 
+  RowBox[{"CDF", "[", 
+   RowBox[{
+    RowBox[{"NormalDistribution", "[", 
+     RowBox[{"mu", ",", "sigma"}], "]"}], ",", "x"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.722770627796831*^9, 3.7227706278881593`*^9}, {
+  3.722777126047042*^9, 
+  3.7227771896607227`*^9}},ExpressionUUID->"b1762f3c-af20-4493-8374-\
 b1596e8a61d1"],
 
+Cell[BoxData["0.3567852018998734`"], "Output",
+ CellChangeTimes->{{3.722777186749927*^9, 
+  3.7227771898673444`*^9}},ExpressionUUID->"0f42833d-a01b-4277-a47f-\
+0481b304aeac"]
+}, Open  ]],
+
+Cell["\<\
+Suppose that X is a Gaussian Random Variable with a mean equal to -156.9 and \
+a variance equal to 28.4. Determine the probability that X is within +-9.5 of \
+its mean. That is, determine the follow probability:
+
+Pr[|X-mu| =< delta
+
+where delta = 9.5.\
+\>", "Text",
+ CellChangeTimes->{{3.7227771954752645`*^9, 3.7227772620674257`*^9}, 
+   3.722778569452759*^9},ExpressionUUID->"cdb5519c-6680-4556-9446-\
+fb800ec3dadc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"mu", ",", "var", ",", "delta", ",", "sigma", ",", "x"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mu", "=", 
+   RowBox[{"-", "156.9"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", "28.4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"delta", "=", "9.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", 
+   RowBox[{"Sqrt", "[", "var", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FX", "[", "x_", "]"}], "=", 
+   RowBox[{"CDF", "[", 
+    RowBox[{
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"mu", ",", "sigma"}], "]"}], ",", "x"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"P", "=", 
+  RowBox[{
+   RowBox[{"FX", "[", 
+    RowBox[{"mu", "+", "delta"}], "]"}], "-", 
+   RowBox[{"FX", "[", 
+    RowBox[{"mu", "-", "delta"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7227772688494425`*^9, 
+  3.7227773591239033`*^9}},ExpressionUUID->"7d201959-58bb-4753-9ca7-\
+5b9442347c1f"],
+
+Cell[BoxData["0.9253556027564296`"], "Output",
+ CellChangeTimes->{{3.7227773377759614`*^9, 
+  3.722777359762495*^9}},ExpressionUUID->"36e77f16-cfa9-4b7e-ba79-\
+eec47de2f594"]
+}, Open  ]],
+
 Cell[TextData[StyleBox["A question involving the covariance for two random \
-variables.\n", "Subsubsection"]], "Text",
- CellChangeTimes->{{3.7227706304328613`*^9, 
-  3.7227706329124737`*^9}},ExpressionUUID->"cff5b818-0018-43b5-8d18-\
+variables.", "Subsubsection"]], "Text",
+ CellChangeTimes->{{3.7227706304328613`*^9, 3.7227706329124737`*^9}, 
+   3.722777445668016*^9},ExpressionUUID->"cff5b818-0018-43b5-8d18-\
 4027b831ad66"],
 
-Cell[BoxData["asdf"], "Input",
- CellChangeTimes->{{3.7227706336775136`*^9, 
-  3.7227706337607594`*^9}},ExpressionUUID->"98a6c563-a40a-4c9c-acc8-\
+Cell["\<\
+Suppose that X is an exponential random variable with a mean equal to 4.7. \
+Another random variable Y is equal to
+
+Y= Sqrt[X]+a*X
+
+where a = -3.6. Determine the covariance for X and Y.
+
+Round your answer to 2 digits to the right of the decimal.\
+\>", "Text",
+ CellChangeTimes->{
+  3.7227774484604445`*^9},ExpressionUUID->"b2c922c4-bdd1-4f8c-9c0c-\
+7e853a386775"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"mu", ",", "a", ",", "fX", ",", "x", ",", "y"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mu", " ", "=", " ", "4.7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"-", "3.6"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fX", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "x"}], "/", "mu"}], "]"}], "/", "mu"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"y", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Sqrt", "[", "x", "]"}], "+", 
+    RowBox[{"a", "*", "x"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EX", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EY", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"y", "[", "x", "]"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXY", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"y", "[", "x", "]"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"covXY", "=", 
+  RowBox[{"EXY", "-", 
+   RowBox[{"EX", "*", "EY"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7227706336775136`*^9, 3.7227706337607594`*^9}, 
+   3.7227774513822417`*^9},ExpressionUUID->"98a6c563-a40a-4c9c-acc8-\
 e11ad8d85a1d"],
 
+Cell[BoxData[
+ RowBox[{"-", "75.00895865139611`"}]], "Output",
+ CellChangeTimes->{
+  3.722777452457085*^9},ExpressionUUID->"1c3432b5-e085-4f23-ad12-\
+4deef740acfa"]
+}, Open  ]],
+
+Cell["\<\
+Suppose that X is a discrete random variable with a Poisson probability \
+density function with a mean parameter equal to 3.9. Another random variable \
+Y is equal to
+
+Y = X + X^2 + a^X
+
+where a  = 0.49. Determine the covariance for X and Y.
+
+Round your answer to 2 digits to the right of the decimal.\
+\>", "Text",
+ CellChangeTimes->{{3.722777731549034*^9, 
+  3.7227777519236307`*^9}},ExpressionUUID->"c2430af3-9ca5-44a6-9c41-\
+30dda86bb61a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"mu", ",", "a", ",", "fX", ",", "x", ",", "y"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mu", " ", "=", " ", "3.9"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", ".49"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fX", "[", "x_", "]"}], "=", 
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"PoissonDistribution", "[", "mu", "]"}], ",", "x"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"y", "[", "x_", "]"}], "=", 
+   RowBox[{"x", "+", 
+    RowBox[{"x", "^", "2"}], "+", 
+    RowBox[{"a", "^", "x"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EX", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EY", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"y", "[", "x", "]"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXY", "=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"y", "[", "x", "]"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"covXY", "=", 
+  RowBox[{"EXY", "-", 
+   RowBox[{"EX", "*", "EY"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7227774944765015`*^9, 3.7227775653317556`*^9}, {
+  3.722777618828959*^9, 
+  3.722777657435963*^9}},ExpressionUUID->"eba65e74-e6b6-4fb4-9604-\
+ab79668227de"],
+
+Cell[BoxData["37.94784077559872`"], "Output",
+ CellChangeTimes->{
+  3.722777569223055*^9, {3.7227777023364086`*^9, 
+   3.7227777166043634`*^9}},ExpressionUUID->"c72bb7b8-44f2-462e-830e-\
+3921ea18b678"]
+}, Open  ]],
+
 Cell[TextData[StyleBox["A question involving the continuous/discrete Bayes\
-\[CloseCurlyQuote] rule.\n", "Subsubsection"]], "Text",
- CellChangeTimes->{{3.722770635937565*^9, 
-  3.7227706376882086`*^9}},ExpressionUUID->"e4d70ff1-087c-4ac4-b509-\
+\[CloseCurlyQuote] rule. (Quiz17)", "Subsubsection"]], "Text",
+ CellChangeTimes->{{3.722770635937565*^9, 3.7227706376882086`*^9}, {
+  3.7227778283881507`*^9, 
+  3.7227778491804256`*^9}},ExpressionUUID->"e4d70ff1-087c-4ac4-b509-\
 6fa6a12f8e76"],
 
-Cell[BoxData["asdf"], "Input",
- CellChangeTimes->{{3.7227706382216315`*^9, 
-  3.7227706383058777`*^9}},ExpressionUUID->"2dab8fe0-d8df-413a-b81a-\
+Cell["\<\
+Suppose that 48.4 percent of the cars manufactured by a particular automobile \
+manufacturer are \[OpenCurlyDoubleQuote]lemons\[CloseCurlyDoubleQuote], which \
+means that they were manufactured with some sort of flaw. The lifetime in \
+years T for one of their cars that IS a \[OpenCurlyDoubleQuote]lemon\
+\[CloseCurlyDoubleQuote] is a random variable with the following probability \
+density:
+
+fTgLemon=t/sigma^2Exp[(-t^2)/(2*sigma^2)]
+
+where sigma = 12.5. The lifetime in years T for one of their cars that IS NOT \
+a \[OpenCurlyDoubleQuote]lemon\[CloseCurlyDoubleQuote] is an exponential \
+random variable with a mean equal to 14.6. Suppose you buy one of their cars \
+and the car\[CloseCurlyQuote]s lifetime turns out to be 13 years. Based on \
+that, what is the probability that the car was a lemon?
+
+Round your answer to 3 digits to the right of the decimal.\
+\>", "Text",
+ CellChangeTimes->{
+  3.72277800360639*^9},ExpressionUUID->"bf758e33-1450-48c4-8f6f-6b1445c693a7"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "fTgLemon", ",", "fTgNoLemon", ",", "plemon", ",", "pnotLemon", ",", 
+   "sigma", ",", "muNoLemon", ",", "T", ",", "fT", ",", "PLemongT"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"plemon", " ", "=", " ", ".484"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pnotLemon", "=", 
+   RowBox[{"1", "-", "plemon"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", "12.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"muNoLemon", "=", "14.6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", "13"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fTgLemon", "=", 
+   RowBox[{
+    RowBox[{"t", "/", 
+     RowBox[{"sigma", "^", "2"}]}], 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"-", 
+        RowBox[{"t", "^", "2"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", 
+        RowBox[{"sigma", "^", "2"}]}], ")"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fTgNoLemon", "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "t"}], "/", "muNoLemon"}], "]"}], "/", "muNoLemon"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fT", "=", 
+   RowBox[{
+    RowBox[{"fTgLemon", "*", "plemon"}], "+", 
+    RowBox[{"fTgNoLemon", "*", "pnotLemon"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PLemongT", "=", 
+  RowBox[{"fTgLemon", "*", 
+   RowBox[{"plemon", "/", "fT"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7227706382216315`*^9, 3.7227706383058777`*^9}, {
+  3.722777993568621*^9, 
+  3.7227780080231895`*^9}},ExpressionUUID->"2dab8fe0-d8df-413a-b81a-\
 3546522e135e"],
 
+Cell[TextData[{
+ StyleBox["Question 2",
+  FontVariations->{"Underline"->True}],
+ StyleBox["\n",
+  FontVariations->{"Underline"->True}],
+ "Suppose that a communication source transmits a symbol from an alphabet \
+that contains 4 possible symbols. The frequency with which the source \
+transmits the symbols is associated with the following probabilities\n\n\
+Pr[kth symbol] = k/10  k = 1, 2, 3, 4\n\nFor each of the transmitted symbols, \
+the signal S that is detected by the receiver is a continuous random variable \
+with the following conditional probability density function:\n\nfS(s | kth \
+symbol was transmitted) =  1/Sqrt[2*Pi*sigma^2]*Exp[-1/2((s-k)/sigma)^2]; \
+\[Minus]\[Infinity]<s<\[Infinity],\n\nwhere sigma = 0.47. ",
+ StyleBox["Determine the probability that the first symbol (k = 1) was \
+transmitted given that the received signal is S = 1.12.",
+  FontVariations->{"Underline"->True}],
+ "\n\nRound your answer to 3 digits to the right of the decimal."
+}], "Text",
+ CellChangeTimes->{{3.722778015783201*^9, 
+  3.7227780593661203`*^9}},ExpressionUUID->"63625512-b8a3-4910-b8bb-\
+34c76b4d9ecd"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "P1", ",", "P2", ",", "P3", ",", "P4", ",", "fSg1", ",", "sigma", ",", "S", 
+   ",", "fSg1", ",", "fSg2", ",", "fSg3", ",", "fSg4", ",", "fS"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", "0.47"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", "1.12"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P1", "=", 
+   RowBox[{"1", "/", "10"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P2", "=", 
+   RowBox[{"2", "/", "10"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P3", "=", 
+   RowBox[{"3", "/", "10"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P4", "=", 
+   RowBox[{"4", "/", "10"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fSg1", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", "*", "Pi", "*", 
+       RowBox[{"sigma", "^", "2"}]}], "]"}]}], "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "2"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"s", "-", "1"}], ")"}], "/", "sigma"}], ")"}], "^", "2"}]}],
+      "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fSg2", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", "*", "Pi", "*", 
+       RowBox[{"sigma", "^", "2"}]}], "]"}]}], "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "2"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"s", "-", "2"}], ")"}], "/", "sigma"}], ")"}], "^", "2"}]}],
+      "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fSg3", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", "*", "Pi", "*", 
+       RowBox[{"sigma", "^", "2"}]}], "]"}]}], "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "2"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"s", "-", "3"}], ")"}], "/", "sigma"}], ")"}], "^", "2"}]}],
+      "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fSg4", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", "*", "Pi", "*", 
+       RowBox[{"sigma", "^", "2"}]}], "]"}]}], "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "2"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"s", "-", "4"}], ")"}], "/", "sigma"}], ")"}], "^", "2"}]}],
+      "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fS", "=", 
+   RowBox[{
+    RowBox[{"fSg1", "*", "P1"}], "+", 
+    RowBox[{"fSg2", "*", "P2"}], "+", 
+    RowBox[{"fSg3", "*", "P3"}], "+", 
+    RowBox[{"fSg4", "*", "P4"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"P1gS", "=", 
+  RowBox[{"fSg1", "*", 
+   RowBox[{"P1", "/", "fS"}]}]}]}], "Input",
+ CellChangeTimes->{
+  3.722778027566039*^9},ExpressionUUID->"32393aaf-0d7a-4d75-a1c4-\
+e052ff741a82"],
+
 Cell[TextData[StyleBox["A question involving the autocorrelation or \
-power-spectral density for a random process.\n", "Subsubsection"]], "Text",
- CellChangeTimes->{{3.722770642113017*^9, 
-  3.7227706434726353`*^9}},ExpressionUUID->"94456c18-14bb-43cf-9d50-\
+power-spectral density for a random process.", "Subsubsection"]], "Text",
+ CellChangeTimes->{{3.722770642113017*^9, 3.7227706434726353`*^9}, 
+   3.722777829852154*^9},ExpressionUUID->"94456c18-14bb-43cf-9d50-\
 ba58c563fab1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Power Spectral Density: (Quiz 19)", "Subsection",
+ CellChangeTimes->{{3.7227781557825017`*^9, 
+  3.7227781702544537`*^9}},ExpressionUUID->"028e4a78-e35b-439e-8be8-\
+ef1dccd23d54"],
+
+Cell[TextData[{
+ StyleBox["Question 1",
+  FontVariations->{"Underline"->True}],
+ "\nSuppose that a wide-sense stationary random process has the following \
+power spectral density function:\n\nSXX(f) = Ae^- | f / B |\n\nwhere A = 6.16 \
+and B = 7.32. Determine the total power for this process.\n\nRound your \
+answer to 2 digits to the right of the decimal."
+}], "Text",
+ CellChangeTimes->{{3.7227781872237062`*^9, 3.722778207774635*^9}, {
+  3.722778288399173*^9, 
+  3.7227782905829916`*^9}},ExpressionUUID->"c9b46a4c-bcc6-404e-9992-\
+376856f75cc9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"A", ",", "B", ",", "f"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "6.16"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", "7.32"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SXX", "=", 
+   RowBox[{"A", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"-", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "/", "B"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"P", "=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{"SXX", ",", 
+    RowBox[{"{", 
+     RowBox[{"f", ",", 
+      RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], 
+   "]"}]}]}], "Input",ExpressionUUID->"3c3c19e4-5c7b-449b-a3bd-9d1ae7b135b5"],
+
+Cell[BoxData["90.1824`"], "Output",
+ CellChangeTimes->{
+  3.7227782206458826`*^9},ExpressionUUID->"37ab76f3-73df-435d-ba35-\
+86f31f6f0a11"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 2",
+  FontVariations->{"Underline"->True}],
+ "\nSuppose that a wide-sense stationary random process has the following \
+power spectral density function:\n\nSXX(f) = Ae^- | f / B |\n\nwhere A = 9.17 \
+and B = 8.87. Determine the power for this process in the frequency interval \
+from 7.9 to 13.5 Hz.\n\nRound your answer to 2 digits to the right of the \
+decimal."
+}], "Text",
+ CellChangeTimes->{{3.722778228232092*^9, 3.722778232998832*^9}, {
+  3.7227782922632775`*^9, 
+  3.722778294959466*^9}},ExpressionUUID->"26a2945e-ce4b-4077-be04-\
+548aedcd3eed"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"A", ",", "B", ",", "f", ",", "f1", ",", "f2"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "9.17"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", "8.87"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f1", "=", " ", "7.9"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f2", " ", "=", " ", "13.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SXX", "=", 
+   RowBox[{"A", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"-", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "/", "B"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"P12", "=", 
+  RowBox[{"2", "*", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{"SXX", ",", 
+     RowBox[{"{", 
+      RowBox[{"f", ",", "f1", ",", "f2"}], "}"}]}], "]"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "need", " ", "*", "2", " ", "in", " ", "order", " ", "to", " ", "get", 
+     " ", "both", " ", "sides", " ", "of", " ", "the", " ", "curve"}], 
+    "*)"}]}]}]}], "Input",ExpressionUUID->"d95e5b19-2734-4814-94f9-\
+261826f89c9d"],
+
+Cell[BoxData["31.25223328801204`"], "Output",
+ CellChangeTimes->{
+  3.7227782729036484`*^9},ExpressionUUID->"edd7c359-adc5-47ba-aacf-\
+e5b59122e0ad"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 3",
+  FontVariations->{"Underline"->True}],
+ "\nSuppose that a wide-sense stationary random process has the following \
+autocorrelation function:\n\nRXX(f) = Ae^- | f / B |\n\nwhere A = 103 and B = \
+0.40. Determine the power for this process in the frequency interval from 2.1 \
+to 80.7 Hz.\n\nRound your answer to 2 digits to the right of the decimal."
+}], "Text",
+ CellChangeTimes->{{3.7227782577041154`*^9, 3.7227782639587955`*^9}, {
+  3.7227782969427547`*^9, 
+  3.722778299303048*^9}},ExpressionUUID->"982a36bc-c34c-4bb0-93ce-\
+81603bbf686e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"A", ",", "B", ",", "tau", ",", "f"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "103"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", "0.40"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f1", "=", "2.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f2", "=", "80.7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RXX", "=", 
+   RowBox[{"A", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"-", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"tau", "/", "B"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SXX", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"RXX", "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"I", "*", "2", "*", "Pi", "*", "f", "*", "tau"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"tau", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"P12", "=", 
+  RowBox[{"2", "*", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{"SXX", ",", 
+     RowBox[{"{", 
+      RowBox[{"f", ",", "f1", ",", "f2"}], "}"}]}], "]"}]}]}]}], "Input",Expre\
+ssionUUID->"a095ba71-f53a-4ed4-a3fd-bd41df81cfd9"],
+
+Cell[BoxData["11.955064916800403`"], "Output",
+ CellChangeTimes->{
+  3.722778280566103*^9},ExpressionUUID->"5ee169a1-2ef9-42ec-a01d-\
+f45610856b5c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Autocorrelation: (Quiz 20)", "Subsection"]], \
+"Subsection",
+ CellChangeTimes->{{3.7227783092154903`*^9, 
+  3.722778321807353*^9}},ExpressionUUID->"57e1766f-fb54-46f9-a1be-\
+3062defa7002"],
+
+Cell["\<\
+Suppose that X(t) is a wide-sense stationary random process with the \
+following power spectral density:
+
+SXX(f) = Ae^- | f / B |
+
+where A = 4.2 and W = 2.5 Hz. This process is input to a filter with an \
+impulse response:
+
+h(t) = 1 / T rect( (t-T/2) / T )
+
+which corresponds to an ideal moving-average filter with a width of T = 0.90 \
+seconds. The output of the filter is another random process Y(t). Determine \
+the total power for the output process Y(t).
+
+Round your answer to 2 digits to the right of the decimal.\
+\>", "Text",
+ CellChangeTimes->{{3.7227783586887026`*^9, 
+  3.722778400703935*^9}},ExpressionUUID->"c8e99480-d74a-4b01-9ffd-\
+2a7b6bdff84e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"A", ",", "W", ",", "T", ",", "f", ",", "t", ",", "h", ",", "H"}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "4.2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"W", "=", "2.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "=", "0.90"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SXX", "=", 
+   RowBox[{"A", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"-", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "/", "W"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "/", "T"}], ")"}], " ", 
+     RowBox[{"UnitBox", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"t", "-", 
+         RowBox[{"T", "/", "2"}]}], ")"}], "/", "T"}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"something", " ", "is", " ", "wrong", " ", "here"}], "..."}], " ",
+    "*)"}], "\[IndentingNewLine]", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"H", "=", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"h", "*", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", "I"}], "*", "2", "*", "Pi", "*", "f", "*", "t"}], 
+        "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", 
+        RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}], ",", 
+      RowBox[{"Assumptions", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "Infinity"}], ",", "f", ",", "Infinity"}], "}"}]}]}], 
+     "]"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{"H", "=", 
+    RowBox[{"FourierTransform", "[", 
+     RowBox[{"h", ",", "t", ",", "f", ",", 
+      RowBox[{"FourierParameters", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", " ", 
+         RowBox[{
+          RowBox[{"-", "2"}], "*", "Pi"}]}], "}"}]}]}], "]"}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SYY", "=", 
+   RowBox[{"SXX", "*", 
+    RowBox[{
+     RowBox[{"Abs", "[", "H", "]"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PYY", "=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{"SYY", ",", 
+    RowBox[{"{", 
+     RowBox[{"f", ",", 
+      RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7227784071830244`*^9, 3.722778407261257*^9}, 
+   3.722778470201107*^9},ExpressionUUID->"5bca4ab0-d506-4cdd-bab7-\
+a79e8aebdd76"],
+
+Cell[BoxData["3.8997034431471285`"], "Output",
+ CellChangeTimes->{
+  3.7227784939774847`*^9},ExpressionUUID->"4bd41af8-6d9e-4d2d-8271-\
+00461b4fec08"]
+}, Open  ]],
+
+Cell["\<\
+Suppose that a wide-sense stationary process has the following \
+autocorrelation function:
+
+RXX(t) = Ae^- | t / B |
+
+where A = 6.8 and T = 3.9. This process is input to a filter with the impulse \
+response:
+
+h(t) = Be^(-t/T)u(t)
+
+where B = 3.8, and u(t) is the unit-step function. The output of the filter \
+is another random process Y(t). Determine the total power for the output \
+process Y(t).
+
+Round your answer to 2 digits to the right of the decimal.\
+\>", "Text",
+ CellChangeTimes->{{3.722778409376876*^9, 
+  3.7227784574250083`*^9}},ExpressionUUID->"3f4b3635-fa8d-46d6-a540-\
+a5a58bf0be40"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"A", ",", "B", ",", "T", ",", "tau", ",", "t", ",", "f"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "6.8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "=", "3.9"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", "3.8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RXX", "=", 
+   RowBox[{"A", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"-", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"tau", "/", "T"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SXX", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"RXX", "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"I", "*", "2", "*", "Pi", "*", "f", "*", "tau"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"tau", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"B", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "t"}], "/", "T"}], "]"}], "*", 
+    RowBox[{"UnitStep", "[", "t", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"h", "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "I"}], "*", "2", "*", "Pi", "*", "f", "*", "t"}], 
+       "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SYY", "=", 
+   RowBox[{"SXX", "*", 
+    RowBox[{
+     RowBox[{"Abs", "[", "H", "]"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Px", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{"SXX", ",", 
+     RowBox[{"{", 
+      RowBox[{"f", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Py", "=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{"SYY", ",", 
+    RowBox[{"{", 
+     RowBox[{"f", ",", 
+      RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{
+  3.7227785233618755`*^9},ExpressionUUID->"ec108f41-afbf-45f0-a39c-\
+cbe024b84fd8"],
+
+Cell[BoxData["746.7501582228247`"], "Output",
+ CellChangeTimes->{{3.7227785045446653`*^9, 
+  3.7227785336452703`*^9}},ExpressionUUID->"b8a9ab3b-c21a-4ab3-b4a7-\
+08baf284c78d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Assorted Notes:", "Section",
+ CellChangeTimes->{{3.722779832750371*^9, 
+  3.7227798476023197`*^9}},ExpressionUUID->"b73972f6-a776-46b9-97e5-\
+974181187ab6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"EX", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "x1", ",", "x2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXsq", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "x1", ",", "x2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"varX", "=", 
+   RowBox[{"EXsq", "-", 
+    RowBox[{"EX", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"stdevX", "=", 
+    RowBox[{"Sqrt", "[", "varX", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"should", " ", "be", " ", "equal", " ", "to", " ", "1"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"fX", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "x1", ",", "x2"}], "}"}]}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "expected", " ", "value", " ", "of", " ", "Y", " ", "based", " ", "on", 
+    " ", "X", " ", "for", " ", "continuous", " ", "random", " ", "variable", 
+    " ", "X"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EY", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Y", "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "x1", ",", "x2"}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "find", " ", "covariance", " ", "given", " ", "exponential", " ", "random",
+     " ", "variable"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fX", "[", "x_", "]"}], "=", "something"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "[", "x_", "]"}], "=", "something"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EX", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EY", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"y", "[", "x", "]"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"EXY", "=", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "*", 
+      RowBox[{"y", "[", "x", "]"}], "*", 
+      RowBox[{"fX", "[", "x", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"covXY", "=", 
+   RowBox[{"EXY", "-", 
+    RowBox[{"EX", "*", "EY"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rhoXY", "=", 
+   RowBox[{"covXY", "/", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"varX", "*", "varY"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", " ", "=", " ", 
+   RowBox[{"covXY", "/", "varY"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"EX", "-", 
+    RowBox[{"a", "*", "EY"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MMSE", "=", 
+    RowBox[{"varX", "*", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"rhoXY", "^", "2"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.722779906178726*^9, 3.722779938659178*^9}, {
+  3.722780004931986*^9, 
+  3.7227800215317783`*^9}},ExpressionUUID->"0ad750eb-c94f-4b73-90da-\
+ba6afae42a96"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"exponential", " ", "dist"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"fX", " ", "=", " ", 
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"ExponentialDistribution", "[", 
+        RowBox[{"1", "/", "mu"}], "]"}], ",", "x"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EX", "=", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"x", "*", "fX"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"poisson", " ", "dist"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"fX", "[", "x_", "]"}], "=", 
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"PoissonDistribution", "[", "mu", "]"}], ",", "x"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EX", "=", 
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{"x", "*", 
+        RowBox[{"fX", "[", "x", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"exponential", " ", "dist"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"fX", "[", "x_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "x"}], "/", "mu"}], "]"}], "/", "mu"}]}], ";", " ", 
+    RowBox[{"(*", " ", "manual", " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"fy", "=", 
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"ExponentialDistribution", "[", 
+        RowBox[{"1", "/", "mu"}], "]"}], ",", "y"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EX", "=", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"x", "*", 
+        RowBox[{"fX", "[", "x", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.722780129882688*^9, 3.722780218613122*^9}, {
+  3.7227802534057837`*^9, 
+  3.7227802867507076`*^9}},ExpressionUUID->"e73e6c24-9956-423a-b676-\
+a59f1ef5f23c"]
 }, Open  ]]
 },
-WindowSize->{958, 988},
-WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+WindowSize->{804, 988},
+WindowMargins->{{-5, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -664,98 +1703,186 @@ Cell[580, 22, 227, 3, 59, "Subsection", "ExpressionUUID" -> \
 "136e307b-e77e-4978-b902-613fc9da5eee"],
 Cell[810, 27, 293, 5, 71, "Text", "ExpressionUUID" -> \
 "1db60f71-61b6-4d84-9660-0cb31368c264"],
-Cell[1106, 34, 452, 13, 144, "Text", "ExpressionUUID" -> \
+Cell[1106, 34, 500, 13, 144, "Text", "ExpressionUUID" -> \
 "85157d5d-4407-4256-aa51-72ec94932433"],
 Cell[CellGroupData[{
-Cell[1583, 51, 1522, 44, 221, "Input", "ExpressionUUID" -> \
+Cell[1631, 51, 1522, 44, 221, "Input", "ExpressionUUID" -> \
 "0a86e19a-840d-42d3-9470-6824d0da5bc2"],
-Cell[3108, 97, 201, 4, 30, "Output", "ExpressionUUID" -> \
+Cell[3156, 97, 201, 4, 30, "Output", "ExpressionUUID" -> \
 "8f968234-800e-4fd3-9f20-2928d3c2e955"]
 }, Open  ]],
-Cell[3324, 104, 340, 7, 90, "Text", "ExpressionUUID" -> \
+Cell[3372, 104, 340, 7, 90, "Text", "ExpressionUUID" -> \
 "9ddbcb2d-b434-4b9d-ae9d-b085583e405f"],
-Cell[3667, 113, 425, 13, 144, "Text", "ExpressionUUID" -> \
+Cell[3715, 113, 425, 13, 144, "Text", "ExpressionUUID" -> \
 "e77f3b3c-281b-4fb1-9111-a5efecaa1ffb"],
 Cell[CellGroupData[{
-Cell[4117, 130, 990, 31, 107, "Input", "ExpressionUUID" -> \
+Cell[4165, 130, 990, 31, 107, "Input", "ExpressionUUID" -> \
 "ca4f8614-16d0-4dbd-ab73-5470a8b8b09e"],
-Cell[5110, 163, 151, 3, 30, "Output", "ExpressionUUID" -> \
+Cell[5158, 163, 151, 3, 30, "Output", "ExpressionUUID" -> \
 "9f0b12a0-167e-4f49-9a65-13fde42e7f18"]
 }, Open  ]],
-Cell[5276, 169, 425, 9, 87, "Text", "ExpressionUUID" -> \
+Cell[5324, 169, 425, 9, 87, "Text", "ExpressionUUID" -> \
 "46f383cc-8d71-4a1f-88d2-f9f16dbcdc08"],
 Cell[CellGroupData[{
-Cell[5726, 182, 1044, 30, 126, "Input", "ExpressionUUID" -> \
+Cell[5774, 182, 1044, 30, 126, "Input", "ExpressionUUID" -> \
 "090e8a70-4f81-4471-95ee-1fa213f04f5d"],
-Cell[6773, 214, 252, 4, 30, "Output", "ExpressionUUID" -> \
+Cell[6821, 214, 252, 4, 30, "Output", "ExpressionUUID" -> \
 "632d2b52-094e-47ca-a092-cfc8dff3ec3c"]
 }, Open  ]],
-Cell[7040, 221, 313, 5, 41, "Text", "ExpressionUUID" -> \
+Cell[7088, 221, 313, 5, 71, "Text", "ExpressionUUID" -> \
 "29de5f1d-65cc-46fb-b4d5-d518b80f89c2"],
-Cell[7356, 228, 499, 16, 220, "Text", "ExpressionUUID" -> \
+Cell[7404, 228, 499, 16, 220, "Text", "ExpressionUUID" -> \
 "ca0c3abd-09a1-45a5-a364-2fc86f4c8c7b"],
 Cell[CellGroupData[{
-Cell[7880, 248, 1182, 37, 164, "Input", "ExpressionUUID" -> \
+Cell[7928, 248, 1182, 37, 164, "Input", "ExpressionUUID" -> \
 "2aed4e0b-c6f4-40c3-801a-60f753c0e954"],
-Cell[9065, 287, 150, 3, 30, "Output", "ExpressionUUID" -> \
+Cell[9113, 287, 150, 3, 30, "Output", "ExpressionUUID" -> \
 "ff3eac6d-3bf6-4803-9038-07d54f7eea4a"]
 }, Open  ]],
-Cell[9230, 293, 385, 5, 71, "Text", "ExpressionUUID" -> \
+Cell[9278, 293, 385, 5, 71, "Text", "ExpressionUUID" -> \
 "caed3527-fff5-42a7-887c-728bd4a262a0"],
-Cell[9618, 300, 520, 10, 163, "Text", "ExpressionUUID" -> \
+Cell[9666, 300, 520, 10, 163, "Text", "ExpressionUUID" -> \
 "e6c0bbdf-96ee-4ff5-922f-03c3f754c3b0"],
 Cell[CellGroupData[{
-Cell[10163, 314, 1298, 38, 183, "Input", "ExpressionUUID" -> \
+Cell[10211, 314, 1298, 38, 183, "Input", "ExpressionUUID" -> \
 "9af31117-0ed1-4d44-a2a4-bd9f7371ff32"],
-Cell[11464, 354, 144, 2, 30, "Output", "ExpressionUUID" -> \
+Cell[11512, 354, 144, 2, 30, "Output", "ExpressionUUID" -> \
 "382dc2cc-0a46-43df-88ed-f24033fd0e08"]
 }, Open  ]],
-Cell[11623, 359, 558, 13, 163, "Text", "ExpressionUUID" -> \
+Cell[11671, 359, 558, 13, 163, "Text", "ExpressionUUID" -> \
 "e3db7441-08f2-4a6e-a2bf-baad8453ad7b"],
 Cell[CellGroupData[{
-Cell[12206, 376, 2114, 62, 259, "Input", "ExpressionUUID" -> \
+Cell[12254, 376, 2114, 62, 259, "Input", "ExpressionUUID" -> \
 "0c52ebd9-326e-4007-b35a-f7f33ae5feb8"],
-Cell[14323, 440, 148, 3, 30, "Output", "ExpressionUUID" -> \
+Cell[14371, 440, 148, 3, 30, "Output", "ExpressionUUID" -> \
 "267cbbf9-6bab-4087-8320-8760a9c93476"]
 }, Open  ]],
-Cell[14486, 446, 281, 4, 41, "Text", "ExpressionUUID" -> \
+Cell[14534, 446, 281, 4, 41, "Text", "ExpressionUUID" -> \
 "ac054258-5b44-4473-9cb0-0ce87830d121"],
-Cell[14770, 452, 1581, 53, 148, "Text", "ExpressionUUID" -> \
+Cell[14818, 452, 1581, 53, 148, "Text", "ExpressionUUID" -> \
 "3162a52f-56c0-44cd-ba38-9126895dc8ad"],
-Cell[16354, 507, 572, 12, 106, "Text", "ExpressionUUID" -> \
+Cell[16402, 507, 572, 12, 125, "Text", "ExpressionUUID" -> \
 "ccbb4b7a-302f-4b08-a902-97868b324598"],
 Cell[CellGroupData[{
-Cell[16951, 523, 884, 22, 126, "Input", "ExpressionUUID" -> \
+Cell[16999, 523, 884, 22, 126, "Input", "ExpressionUUID" -> \
 "be75de60-5cca-4180-8f4d-a2ee1f22f52a"],
-Cell[17838, 547, 165, 3, 30, "Output", "ExpressionUUID" -> \
+Cell[17886, 547, 165, 3, 30, "Output", "ExpressionUUID" -> \
 "096293eb-bb7a-46d6-8d79-647e8210b53e"]
 }, Open  ]],
-Cell[18018, 553, 647, 12, 106, "Text", "ExpressionUUID" -> \
+Cell[18066, 553, 647, 12, 125, "Text", "ExpressionUUID" -> \
 "6fda871a-ebf3-468f-81c4-5cba52668bf1"],
 Cell[CellGroupData[{
-Cell[18690, 569, 1097, 28, 145, "Input", "ExpressionUUID" -> \
+Cell[18738, 569, 1391, 37, 183, "Input", "ExpressionUUID" -> \
 "52794987-72e1-498b-8e91-bd599ba6d1e7"],
-Cell[19790, 599, 148, 3, 30, "Output", "ExpressionUUID" -> \
+Cell[20132, 608, 148, 3, 30, "Output", "ExpressionUUID" -> \
 "8e04438b-e9be-4119-9253-0c9838af408e"]
 }, Open  ]],
-Cell[19953, 605, 243, 4, 71, "Text", "ExpressionUUID" -> \
+Cell[20295, 614, 264, 4, 41, "Text", "ExpressionUUID" -> \
 "842d0bb4-765b-4c80-9d12-d1d07c83483f"],
-Cell[20199, 611, 158, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[20562, 620, 318, 7, 49, "Text", "ExpressionUUID" -> \
+"190fb818-3cab-46ce-8d65-6e354ea2518b"],
+Cell[CellGroupData[{
+Cell[20905, 631, 682, 18, 107, "Input", "ExpressionUUID" -> \
 "b1762f3c-af20-4493-8374-b1596e8a61d1"],
-Cell[20360, 616, 248, 4, 71, "Text", "ExpressionUUID" -> \
+Cell[21590, 651, 174, 3, 30, "Output", "ExpressionUUID" -> \
+"0f42833d-a01b-4277-a47f-0481b304aeac"]
+}, Open  ]],
+Cell[21779, 657, 428, 11, 125, "Text", "ExpressionUUID" -> \
+"cdb5519c-6680-4556-9446-fb800ec3dadc"],
+Cell[CellGroupData[{
+Cell[22232, 672, 1052, 31, 145, "Input", "ExpressionUUID" -> \
+"7d201959-58bb-4753-9ca7-5b9442347c1f"],
+Cell[23287, 705, 174, 3, 30, "Output", "ExpressionUUID" -> \
+"36e77f16-cfa9-4b7e-ba79-eec47de2f594"]
+}, Open  ]],
+Cell[23476, 711, 269, 4, 41, "Text", "ExpressionUUID" -> \
 "cff5b818-0018-43b5-8d18-4027b831ad66"],
-Cell[20611, 622, 160, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[23748, 717, 373, 12, 163, "Text", "ExpressionUUID" -> \
+"b2c922c4-bdd1-4f8c-9c0c-7e853a386775"],
+Cell[CellGroupData[{
+Cell[24146, 733, 1819, 58, 183, "Input", "ExpressionUUID" -> \
 "98a6c563-a40a-4c9c-acc8-e11ad8d85a1d"],
-Cell[20774, 627, 259, 4, 71, "Text", "ExpressionUUID" -> \
+Cell[25968, 793, 164, 4, 30, "Output", "ExpressionUUID" -> \
+"1c3432b5-e085-4f23-ad12-4deef740acfa"]
+}, Open  ]],
+Cell[26147, 800, 453, 13, 163, "Text", "ExpressionUUID" -> \
+"c2430af3-9ca5-44a6-9c41-30dda86bb61a"],
+Cell[CellGroupData[{
+Cell[26625, 817, 1808, 57, 183, "Input", "ExpressionUUID" -> \
+"eba65e74-e6b6-4fb4-9604-ab79668227de"],
+Cell[28436, 876, 201, 4, 30, "Output", "ExpressionUUID" -> \
+"c72bb7b8-44f2-462e-830e-3921ea18b678"]
+}, Open  ]],
+Cell[28652, 883, 319, 5, 41, "Text", "ExpressionUUID" -> \
 "e4d70ff1-087c-4ac4-b509-6fa6a12f8e76"],
-Cell[21036, 633, 160, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[28974, 890, 987, 19, 220, "Text", "ExpressionUUID" -> \
+"bf758e33-1450-48c4-8f6f-6b1445c693a7"],
+Cell[29964, 911, 1676, 50, 202, "Input", "ExpressionUUID" -> \
 "2dab8fe0-d8df-413a-b81a-3546522e135e"],
-Cell[21199, 638, 273, 4, 71, "Text", "ExpressionUUID" -> \
+Cell[31643, 963, 1108, 20, 296, "Text", "ExpressionUUID" -> \
+"63625512-b8a3-4910-b8bb-34c76b4d9ecd"],
+Cell[32754, 985, 3103, 102, 259, "Input", "ExpressionUUID" -> \
+"32393aaf-0d7a-4d75-a1c4-e052ff741a82"],
+Cell[35860, 1089, 294, 4, 41, "Text", "ExpressionUUID" -> \
 "94456c18-14bb-43cf-9d50-ba58c563fab1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36191, 1098, 185, 3, 49, "Subsection", "ExpressionUUID" -> \
+"028e4a78-e35b-439e-8be8-ef1dccd23d54"],
+Cell[36379, 1103, 549, 11, 163, "Text", "ExpressionUUID" -> \
+"c9b46a4c-bcc6-404e-9992-376856f75cc9"],
+Cell[CellGroupData[{
+Cell[36953, 1118, 734, 22, 107, "Input", "ExpressionUUID" -> \
+"3c3c19e4-5c7b-449b-a3bd-9d1ae7b135b5"],
+Cell[37690, 1142, 139, 3, 30, "Output", "ExpressionUUID" -> \
+"37ab76f3-73df-435d-ba35-86f31f6f0a11"]
+}, Open  ]],
+Cell[37844, 1148, 589, 12, 182, "Text", "ExpressionUUID" -> \
+"26a2945e-ce4b-4077-be04-548aedcd3eed"],
+Cell[CellGroupData[{
+Cell[38458, 1164, 1112, 32, 145, "Input", "ExpressionUUID" -> \
+"d95e5b19-2734-4814-94f9-261826f89c9d"],
+Cell[39573, 1198, 149, 3, 30, "Output", "ExpressionUUID" -> \
+"edd7c359-adc5-47ba-aacf-e5b59122e0ad"]
+}, Open  ]],
+Cell[39737, 1204, 583, 11, 182, "Text", "ExpressionUUID" -> \
+"982a36bc-c34c-4bb0-93ce-81603bbf686e"],
+Cell[CellGroupData[{
+Cell[40345, 1219, 1246, 38, 164, "Input", "ExpressionUUID" -> \
+"a095ba71-f53a-4ed4-a3fd-bd41df81cfd9"],
+Cell[41594, 1259, 148, 3, 30, "Output", "ExpressionUUID" -> \
+"5ee169a1-2ef9-42ec-a01d-f45610856b5c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41791, 1268, 212, 4, 49, "Subsection", "ExpressionUUID" -> \
+"57e1766f-fb54-46f9-a1be-3062defa7002"],
+Cell[42006, 1274, 671, 19, 239, "Text", "ExpressionUUID" -> \
+"c8e99480-d74a-4b01-9ffd-2a7b6bdff84e"],
+Cell[CellGroupData[{
+Cell[42702, 1297, 2499, 78, 240, "Input", "ExpressionUUID" -> \
+"5bca4ab0-d506-4cdd-bab7-a79e8aebdd76"],
+Cell[45204, 1377, 150, 3, 30, "Output", "ExpressionUUID" -> \
+"4bd41af8-6d9e-4d2d-8271-00461b4fec08"]
+}, Open  ]],
+Cell[45369, 1383, 608, 19, 239, "Text", "ExpressionUUID" -> \
+"3f4b3635-fa8d-46d6-a540-a5a58bf0be40"],
+Cell[CellGroupData[{
+Cell[46002, 1406, 2245, 73, 221, "Input", "ExpressionUUID" -> \
+"ec108f41-afbf-45f0-a39c-cbe024b84fd8"],
+Cell[48250, 1481, 175, 3, 30, "Output", "ExpressionUUID" -> \
+"b8a9ab3b-c21a-4ab3-b4a7-08baf284c78d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48474, 1490, 162, 3, 70, "Section", "ExpressionUUID" -> \
+"b73972f6-a776-46b9-97e5-974181187ab6"],
+Cell[48639, 1495, 3843, 117, 468, "Input", "ExpressionUUID" -> \
+"0ad750eb-c94f-4b73-90da-ba6afae42a96"],
+Cell[52485, 1614, 2316, 67, 240, "Input", "ExpressionUUID" -> \
+"e73e6c24-9956-423a-b676-a59f1ef5f23c"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
